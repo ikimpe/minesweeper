@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="minesweeper.js"></script>
+        <script src="frontsweeper.js"></script>
+        <style>
+        #minesweeperTable{
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        #minesweeperTable td{
+            width: 15px;
+            height: 15px;
+            text-align: center;
+            line-height: 15px;
+        }
+        #minesweeperTable, tr, td{
+            border: 1px solid #AAA;
+        }
+        #minesweeperGameData{
+            width: 650px;
+            margin: 5px auto 20px auto;
+            position: relative;
+        }
+        #minesweeperTable:hover{
+            cursor: crosshair;
+        }
+        #gameDataRemainingBombs{
+            position: absolute;
+            left: 0;
+        }
+        #gameDataWinLose{
+            position: absolute;
+            left: 300px;
+        }
+        #gameDataTime{
+            position: absolute;
+            left: 470px;
+        }
+
+        
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <form id="formsweeper" class="form-inline">
+                    <fieldset class="form-group">
+                        <legend class="scheduler-border">Minesweeper setup</legend>
+                        <label for="columnInput">Columns: </label><input type="number" id="columnInput" min="5" max="100" value="10">
+                        <label for="rowInput">Rows: </label><input type="number" id="rowInput" min="5" max="100" value="10">
+                        <label for="bombsInput">Bombs: </label><input type="number" id="bombsInput" min="1" value="10"><br>
+                        <input type="button" id="btnsweeper" value="Create warzone" class="btn btn-default">
+                    </fieldset>
+                </form>
+            </div>
+            <div class="row" id="minesweeperGameData">
+                <h4>
+                    <span id="gameDataRemainingBombs"></span>
+                    <span id="gameDataWinLose"></span>
+                    <span id="gameDataTime"></span>
+                </h4>
+            </div>
+            <div class="row">
+                <table id="minesweeperTable">
+                </table>
+            </div>
+        </div>
+    </body>
+</html>
